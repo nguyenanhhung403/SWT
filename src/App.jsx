@@ -5,8 +5,12 @@ import TodoList from "./components/TodoList";
 import { useTodos } from "./hooks/useTodos";
 
 function App() {
-  const { todos, addTodo, toggleComplete, toggleEdit, updateTodo, deleteTodo } =
+  const { todos, addTodo, toggleComplete, toggleEdit, updateTodo, deleteTodo, setTodos } =
     useTodos([]);
+
+  const onDeleteAll = () => {
+    setTodos([]); // Xóa tất cả todos
+  };
 
   return (
     <div className="container">
@@ -18,6 +22,7 @@ function App() {
         onToggleEdit={toggleEdit}
         onUpdateTodo={updateTodo}
         onDeleteTodo={deleteTodo}
+        onDeleteAll={onDeleteAll}
       />
     </div>
   );

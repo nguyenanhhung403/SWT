@@ -5,8 +5,8 @@ test('thêm todo mới', () => {
   const mockAddTodo = jest.fn();
   render(<TodoForm onAdd={mockAddTodo} />);
 
-  const input = screen.getByPlaceholderText(/nhập todo/i);
-  const button = screen.getByText(/thêm/i);
+  const input = screen.getByPlaceholderText(/Add new todo.../i);
+  const button = screen.getByText(/Add/i);
 
   fireEvent.change(input, { target: { value: 'Mới' } });
   fireEvent.click(button);
@@ -18,8 +18,8 @@ test('kiểm tra đầu vào không được để trống', () => {
   const mockAddTodo = jest.fn();
   render(<TodoForm onAdd={mockAddTodo} />);
 
-  const button = screen.getByText(/thêm/i);
+  const button = screen.getByText(/Add/i);
   fireEvent.click(button);
 
-  expect(screen.getByText(/todo không được để trống/i)).toBeInTheDocument();
+  expect(screen.getByText(/Todo không được để trống!/i)).toBeInTheDocument();
 }); 
