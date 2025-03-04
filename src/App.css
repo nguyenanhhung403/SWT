@@ -1,42 +1,145 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Xóa margin/padding mặc định và cho body full height */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Body dùng flexbox để căn giữa container */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9fafb; /* Màu nền */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  color: #111827;
+  line-height: 1.5;
+}
+
+/* Container nằm chính giữa màn hình */
+.container {
+  width: 100%;
+  max-width: 500px; /* Giới hạn chiều rộng */
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px 32px;
+}
+
+/* Tiêu đề */
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 24px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Form thêm Todo */
+.todo-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.todo-input:focus {
+  border-color: #4f46e5;
+  outline: none;
 }
 
-.card {
-  padding: 2em;
+.add-button {
+  padding: 10px 18px;
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.add-button:hover {
+  background-color: #4338ca;
+}
+
+/* Danh sách Todo */
+.todo-list {
+  margin-top: 16px;
+}
+
+/* Mỗi item */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e5e7eb;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  background-color: #fff;
+}
+
+.todo-item:hover {
+  background-color: #f3f4f6;
+}
+
+.todo-item-text {
+  font-size: 1rem;
+}
+
+.todo-item-text.completed {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+/* Nút icon (edit, delete, complete) */
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.icon-button:hover {
+  background-color: #f9fafb;
+}
+
+/* Alert đơn giản khi có lỗi (VD: input rỗng) */
+.alert {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  color: #b91c1c;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Nút đóng alert (nếu cần) */
+.alert button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #b91c1c;
+  font-weight: bold;
+  margin-left: 8px;
 }
