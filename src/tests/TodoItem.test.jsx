@@ -35,4 +35,15 @@ test('xóa todo', () => {
   fireEvent.click(deleteButton);
 
   expect(mockDeleteTodo).toHaveBeenCalledWith(1);
+});
+
+test('không cho phép lưu todo rỗng khi chỉnh sửa', () => {
+  const todo = { id: 1, text: 'Mới', completed: false, editing: true };
+  const mockUpdateTodo = jest.fn();
+  render(<TodoItem todo={todo} onUpdateTodo={mockUpdateTodo} />);
+
+  fireEvent.change(screen.getByTestId('edit-input'), { target: { value: '' } });
+  fireEvent.click(screen.getByTestId('save-button'));
+
+  expect(mockUpdateTodo).not.toHaveBeenCalled();
 }); 
