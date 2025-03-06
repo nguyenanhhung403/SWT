@@ -28,7 +28,7 @@ export default function TodoForm({ onAdd }) {
           data-testid="todo-input"
           className="todo-input"
           type="text"
-          placeholder="Add new todo..."
+          placeholder="Thêm todo mới..."
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);
@@ -37,7 +37,7 @@ export default function TodoForm({ onAdd }) {
           }}
         />
         <button data-testid="add-button" type="submit" className="add-button">
-          Add
+          Thêm
         </button>
       </form>
     </div>
