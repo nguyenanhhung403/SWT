@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import TodoForm from '../components/TodoForm';
+import '@testing-library/jest-dom/extend-expect';
 
 test('thêm todo mới', () => {
   const mockAddTodo = jest.fn();
@@ -22,4 +23,4 @@ test('kiểm tra đầu vào không được để trống', () => {
   fireEvent.click(button);
 
   expect(screen.getByText(/Todo không được để trống!/i)).toBeInTheDocument();
-}); 
+});

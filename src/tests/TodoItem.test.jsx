@@ -3,13 +3,13 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import TodoItem from '../components/TodoItem';
 
 test('chỉnh sửa todo', () => {
-  const todo = { id: 1, text: 'Mới', completed: false };
+  const todo = { id: 1, text: 'Mới', completed: false, editing: true };
   const mockUpdateTodo = jest.fn();
   render(<TodoItem todo={todo} onUpdateTodo={mockUpdateTodo} />);
 
-  const editInput = screen.getByPlaceholderText(/chỉnh sửa todo/i);
+  const editInput = screen.getByTestId('edit-input');
   fireEvent.change(editInput, { target: { value: 'Đã chỉnh sửa' } });
-  const saveButton = screen.getByText(/lưu/i);
+  const saveButton = screen.getByTestId('save-button');
   fireEvent.click(saveButton);
 
   expect(mockUpdateTodo).toHaveBeenCalledWith(1, 'Đã chỉnh sửa');

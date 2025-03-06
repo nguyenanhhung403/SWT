@@ -31,4 +31,12 @@ describe('useTodos', () => {
     });
     expect(result.current.todos).toHaveLength(0);
   });
+
+  it('should not add empty todo', () => {
+    const { result } = renderHook(() => useTodos([]));
+    act(() => {
+      result.current.addTodo('');
+    });
+    expect(result.current.todos).toHaveLength(0);
+  });
 }); 
