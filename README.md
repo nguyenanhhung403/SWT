@@ -35,25 +35,25 @@ KIỂM THỬ (Testing):
 npm test
 
 2. Nội dung kiểm thử
-- Component Rendering
-+ Hiển thị danh sách todo ban đầu
-+ Render từng todo item
-+ Kiểm tra sự xuất hiện của input và các button
+  - Component Rendering
+    + Hiển thị danh sách todo ban đầu
+    + Render từng todo item
+    + Kiểm tra sự xuất hiện của input và các button
 
-- User Interactions
-+ Thêm mới todos
-+ Đánh dấu todos là hoàn thành
-+ Chỉnh sửa todos
-+ Xóa todos
-+ Kiểm tra validation input
+  - User Interactions
+    + Thêm mới todos
+    + Đánh dấu todos là hoàn thành
+    + Chỉnh sửa todos
+    + Xóa todos
+    + Kiểm tra validation input
 
-- State Management
-+ Cập nhật danh sách todos khi có thay đổi
-+ Chuyển trạng thái edit mode
-+ Hiển thị alert thông báo
+  - State Management
+    + Cập nhật danh sách todos khi có thay đổi
+    + Chuyển trạng thái edit mode
+    + Hiển thị alert thông báo
 
-- Edge Cases
-+ Kiểm tra input rỗng
-+ Kiểm tra validation khi chỉnh sửa
-+ Xử lý khi có nhiều todos cùng lúc
+  - Edge Cases
+    + Kiểm tra input rỗng
+    + Kiểm tra validation khi chỉnh sửa
+    + Xử lý khi có nhiều todos cùng lúc
 
