@@ -1,21 +1,23 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import TodoForm from '../components/TodoForm';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen, fireEvent } from "@testing-library/react";
+import jest from "jest-mock";
+import { test, expect } from "@jest/globals";
+import TodoForm from "../components/TodoForm";
+import "@testing-library/jest-dom/extend-expect";
 
-test('thêm todo mới', () => {
+test("thêm todo mới", () => {
   const mockAddTodo = jest.fn();
   render(<TodoForm onAdd={mockAddTodo} />);
 
   const input = screen.getByPlaceholderText(/Add new todo.../i);
   const button = screen.getByText(/Add/i);
 
-  fireEvent.change(input, { target: { value: 'Mới' } });
+  fireEvent.change(input, { target: { value: "Mới" } });
   fireEvent.click(button);
 
-  expect(mockAddTodo).toHaveBeenCalledWith('Mới');
+  expect(mockAddTodo).toHaveBeenCalledWith("Mới");
 });
 
-test('kiểm tra đầu vào không được để trống', () => {
+test("kiểm tra đầu vào không được để trống", () => {
   const mockAddTodo = jest.fn();
   render(<TodoForm onAdd={mockAddTodo} />);
 
