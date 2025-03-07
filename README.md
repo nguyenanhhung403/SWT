@@ -55,6 +55,7 @@ SWT
 │   └── UnitTestDemo.Tests.csproj    // File dự án Unit Tests
 ├── README.md                        // Tài liệu hướng dẫn dự án
 └── ...
+```
 
 
 ## Hướng dẫn cài đặt và chạy
