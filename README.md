@@ -27,7 +27,6 @@ Dự án cung cấp các chức năng CRUD cho **Product** (sản phẩm) và s�
   - **ASP.NET Core Web API**  
   - **Unit Testing** với xUnit / MSTest / NUnit  
   - **Swagger** (Swashbuckle.AspNetCore)
-
 ---
 
 ## Yêu cầu hệ thống
@@ -40,7 +39,6 @@ Dự án cung cấp các chức năng CRUD cho **Product** (sản phẩm) và s�
 
 ## Cấu trúc dự án
 
-```plaintext
 SWT
 ├── UnitTestDemo
 │   ├── Controllers
@@ -55,35 +53,38 @@ SWT
 │   ├── ProductTests.cs              // Ví dụ về các Unit Tests cho Product
 │   └── UnitTestDemo.Tests.csproj    // File dự án Unit Tests
 ├── README.md                        // Tài liệu hướng dẫn dự án
-└── ...  
-
-Hướng dẫn cài đặt và chạy
+└── ...
 
 
-1. Khôi phục và build
+## Hướng dẫn cài đặt và chạy
+#1. Khôi phục và build
+---
 Mở terminal (hoặc PowerShell) tại thư mục gốc của dự án và chạy các lệnh sau:
-# Di chuyển vào thư mục dự án (nếu cần)
+Di chuyển vào thư mục dự án (nếu cần)
 cd SWT
 
-# Khôi phục các package cần thiết
+Khôi phục các package cần thiết
 dotnet restore
 
-# Build dự án
+Build dự án
 dotnet build
 
 
-2. Chạy ứng dụng
+#2. Chạy ứng dụng
+---
 Di chuyển vào thư mục UnitTestDemo và chạy:
 dotnet run 
 
 Khi ứng dụng khởi động thành công, bạn sẽ thấy log hiển thị dòng:
 Now listening on: http://localhost:5229
 
-3. Truy cập Swagger UI
+#3. Truy cập Swagger UI
+---
 Mở trình duyệt và truy cập: (Tại đây, có thể xem tài liệu API và thực hiện các thử nghiệm các endpoint như GET, POST, PUT, DELETE cho Product. hoặc api POSTMAN ) 
 http://localhost:5229/swagger/index.html
 
-4. Chạy Unit Tests
+#4. Chạy Unit Tests
+---
 Để chạy các Unit Tests, thực hiện: ( cd .. (out ra terminal gốc) -->  SWT\ --> cd UnitTestDemo.Test --> dotnet test
 Lệnh này sẽ tự động tìm và chạy tất cả các bài test trong dự án UnitTestDemo.Tests và hiển thị kết quả trên terminal.
 
@@ -101,9 +102,9 @@ Mô tả: Cập nhật thông tin của sản phẩm đã có.
 DELETE /api/products/{id}
 Mô tả: Xóa sản phẩm theo ID.
 
-
 ---
 
-Hy vọng file README.md này sẽ giúp cô và các bạn hiểu rõ hơn về phần Backend về LAB 2 này của nhóm mình, xin chân thành cám ơn 😎💕
+#Hy vọng file README.md này sẽ giúp cô và các bạn hiểu rõ hơn về phần Backend về LAB 2 này của nhóm mình, xin chân thành cám ơn 😎💕
+---
 
 
