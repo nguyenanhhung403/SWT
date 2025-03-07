@@ -122,3 +122,4 @@ C:\Users\nguye\source\repos\BE\UnitTestDemo\obj\Debug\net8.0\refint\UnitTestDemo
 C:\Users\nguye\source\repos\BE\UnitTestDemo\obj\Debug\net8.0\UnitTestDemo.pdb
 C:\Users\nguye\source\repos\BE\UnitTestDemo\obj\Debug\net8.0\UnitTestDemo.genruntimeconfig.cache
 C:\Users\nguye\source\repos\BE\UnitTestDemo\obj\Debug\net8.0\ref\UnitTestDemo.dll
+C:\Users\nguye\source\repos\BE\UnitTestDemo\obj\Debug\net8.0\UnitTestDemo.sourcelink.json

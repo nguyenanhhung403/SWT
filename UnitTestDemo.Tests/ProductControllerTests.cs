@@ -34,10 +34,16 @@ namespace UnitTestDemo.Tests {
 
             // Assert
             // Kiểm tra kết quả là OkObjectResult
+            // trả về đối tướng thành công ->
+            //Assert.IsType<T>(object actual) là một phương thức trong xUnit dùng
+            //để xác nhận rằng đối tượng được truyền vào có kiểu đúng với kiểu T mà bạn mong đợi.
+            // Nếu không, test sẽ thất bại.
             var okResult = Assert.IsType<OkObjectResult>(result);
             // Ép kiểu giá trị trả về bên trong OkObjectResult
+            // kiểm tra dữ liệu có bên trong sản phẩm
             var products = Assert.IsType<List<Product>>(okResult.Value);
             // Kiểm tra danh sách có 2 sản phẩm
+            //equal trả về đúng ới equal ( x , y) với x và y có bằng nhau ko
             Assert.Equal(2, products.Count);
         }
 
