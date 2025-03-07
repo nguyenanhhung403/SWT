@@ -1,5 +1,5 @@
 Link Video 
-[![image](https://github.com/user-attachments/assets/cd8e15a5-286c-4fdd-a06e-eaccb11f55e8)](https://drive.google.com/drive/folders/1G4Zge25V-OeSveRn-DYHNEes95anStcz?usp=sharing)
+(https://github.com/user-attachments/assets/cd8e15a5-286c-4fdd-a06e-eaccb11f55e8)](https://drive.google.com/drive/folders/1G4Zge25V-OeSveRn-DYHNEes95anStcz?usp=sharing)
 
   Todo List Application với React
 - Giới thiệu: Đây là một ứng dụng Todo List đơn giản được xây dựng bằng React. Ứng dụng hỗ trợ các thao tác cơ bản như thêm, sửa, xóa, đánh dấu hoàn thành và cung cấp trải nghiệm tốt với thiết kế hiện đại, responsive. Dự án cũng bao gồm các bài kiểm thử bằng Jest và React Testing Library để đảm bảo tính chính xác và ổn định.
