@@ -1,28 +1,41 @@
+import React, { useState } from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import jest from "jest-mock";
-import { test, expect } from "@jest/globals";
 import TodoForm from "../components/TodoForm";
-import "@testing-library/jest-dom/extend-expect";
+import { describe, test, expect, jest } from "@jest/globals";
 
-test("thêm todo mới", () => {
-  const mockAddTodo = jest.fn();
-  render(<TodoForm onAdd={mockAddTodo} />);
+// Component test bao bọc để quản lý state successMsg
+function TestTodoForm({ onAdd }) {
+  const [successMsg, setSuccessMsg] = useState("");
+  return (
+    <TodoForm
+      onAdd={onAdd}
+      successMsg={successMsg}
+      setSuccessMsg={setSuccessMsg}
+    />
+  );
+}
 
-  const input = screen.getByPlaceholderText(/Add new todo.../i);
-  const button = screen.getByText(/Add/i);
+describe("TodoForm", () => {
+  test("calls onAdd and shows success message when input is valid", () => {
+    const mockOnAdd = jest.fn();
+    render(<TestTodoForm onAdd={mockOnAdd} />);
 
-  fireEvent.change(input, { target: { value: "Mới" } });
-  fireEvent.click(button);
+    // Nhập dữ liệu vào input
+    const input = screen.getByTestId("todo-input");
+    fireEvent.change(input, { target: { value: "Test Todo" } });
+    fireEvent.click(screen.getByTestId("add-button"));
 
-  expect(mockAddTodo).toHaveBeenCalledWith("Mới");
-});
+    // Kiểm tra callback được gọi với giá trị "Test Todo"
+    expect(mockOnAdd).toHaveBeenCalledWith("Test Todo");
+    // Kiểm tra thông báo thành công xuất hiện
+    expect(
+      screen.getByText("Todo đã được thêm thành công!")
+    ).toBeInTheDocument();
+  });
 
-test("kiểm tra đầu vào không được để trống", () => {
-  const mockAddTodo = jest.fn();
-  render(<TodoForm onAdd={mockAddTodo} />);
-
-  const button = screen.getByText(/Add/i);
-  fireEvent.click(button);
-
-  expect(screen.getByText(/Todo không được để trống!/i)).toBeInTheDocument();
+  test("shows error message when input is empty", () => {
+    render(<TestTodoForm onAdd={() => {}} />);
+    fireEvent.click(screen.getByTestId("add-button"));
+    expect(screen.getByText("Todo không được để trống!")).toBeInTheDocument();
+  });
 });
